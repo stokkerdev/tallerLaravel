@@ -22,7 +22,9 @@ class carFactory extends Factory
             'car_model' => $this->faker->name(),
             'car_year' => $this->faker->numberBetween(1970, 2026),
             'car_price' => $this->faker->numberBetween(1000, 1000000),
-            'car_status' => $this->faker->boolean()
+            'car_status' => $this->faker->boolean(),
+            'fk_categoria_id' => $this->faker->numberBetween(1, 3),
+            'barcode' => $this->faker->unique()->ean13()
         ];
     }
 }

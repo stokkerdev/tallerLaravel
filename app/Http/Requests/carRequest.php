@@ -29,7 +29,9 @@ class carRequest extends FormRequest
             "car_model"=> ["required","string","max:255"],
             "car_year"=> ["required","integer","min:1970","max:2026"],
             "car_price"=> ["required","integer","min:0","max:1000000"],
-            "car_status"=> ["required","boolean"]
+            "car_status"=> ["required","boolean"],
+            "fk_categoria_id"=> ["required","exists:categories,id"], //el exist asegura que la categoría exista en la tabla categories
+            "barcode"=> ["required","string","max:255"]
         ];
     }
 }

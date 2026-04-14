@@ -14,7 +14,9 @@ protected $fillable = [
     'car_model',
     'car_year',
     'car_price',
-    'car_status'
+    'car_status',
+    'fk_categoria_id',
+    'barcode'
 ];
     
 }
