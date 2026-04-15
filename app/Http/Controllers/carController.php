@@ -33,8 +33,9 @@ class carController extends Controller
      */
     public function show(string $id)
     {
-        return car::find($id);
 
+        $car = Car::with('category')->findOrFail($id);
+        return response()->json($car,200);
     }
 
     /**

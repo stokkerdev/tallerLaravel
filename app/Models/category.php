@@ -12,4 +12,10 @@ class category extends Model
         'status',
         'recomended_age'
     ];
+
+
+    public function cars()
+    {
+        return $this->hasMany(car::class, 'fk_categoria_id');
+    }
 }
