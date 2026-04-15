@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\car;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\category;
 
 /**
  * @extends Factory<car>
@@ -23,8 +24,8 @@ class carFactory extends Factory
             'car_year' => $this->faker->numberBetween(1970, 2026),
             'car_price' => $this->faker->numberBetween(1000, 1000000),
             'car_status' => $this->faker->boolean(),
-            'fk_categoria_id' => $this->faker->numberBetween(1, 3),
-            'barcode' => $this->faker->unique()->ean13()
+            'fk_categoria_id' =>Category::inRandomOrder()->first()->id, //asigna una categoría aleatoria existente
+            'barcode' => $this->faker->unique()->ean13() 
         ];
     }
 }

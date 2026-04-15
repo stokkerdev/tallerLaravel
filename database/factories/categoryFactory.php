@@ -2,14 +2,15 @@
 
 namespace Database\Factories;
 
-use App\Models\category;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<category>
+ * @extends Factory<Category>
  */
-class categoryFactory extends Factory
+class CategoryFactory extends Factory
 {
+    protected $model = Category::class;
     /**
      * Define the model's default state.
      *
