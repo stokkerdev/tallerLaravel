@@ -62,4 +62,15 @@ class CategoryController extends Controller
             'message' => 'Categoría eliminada'
         ]); 
     }
+
+
+    //se crea el nuevo metodo para obtener las categorías activas con sus carros asociados, recordar ponerlo en routes api
+
+    public function categoriasActivas(){
+
+        $categorias = Category::where('status', true)
+        ->with('cars')->get();
+        return response()->json($categorias, 200);
+
+    }
 }
